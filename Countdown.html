@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #count{
+                display: flex ;
+                align-items: center ;
+                justify-content: center;
+                border-radius: 50%;
+                width: 300px;
+                font-size: 30px;
+            }
+            #er{
+                background-color: rgb(255, 115, 0);
+                width: 300px;
+                height: 300px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                position: relative;
+                padding-left: 100px;
+                padding-top: 20px;
+                padding-right: 100px;
+                border: 1px solid black;
+                box-shadow: 10PX;
+        
+                border-radius: 10%;
+                
+                
+            }
+        </style>
+        
+    </head>
+        <body>
+            <div id="er">
+                <H1>COUNT DOWN</H1>
+            <input type="text" placeholder="Enter Number" id="hh">
+            <h1 id="count">Here You Go</h1>
+            <button onclick="show()">Click</button>
+            </div>
+           
+            
+            <script>
+                 function show()
+                 {
+                  let num= document.getElementById("hh").value
+                 function run()
+                {
+                    if(num==0)
+                    {
+                        clearInterval(oo)
+                        document.getElementById("count").innerHTML="Time's Up"
+                        document.getElementById("count").style.backgroundColor=""
+                        document.getElementById("count").style.width="300px"
+                        document.getElementById("count").style.fontSize="30px"
+                        
+
+                    }
+                    else
+                    {
+                      
+                      let r=document.getElementById("count")
+                      r.innerHTML=num
+                      r.style.backgroundColor="blue"
+                      r.style.width= "50px"
+                      r.style.height="50px"
+                      num--
+                    }
+                }
+                document.getElementById("hh").value=" "
+                 let oo=setInterval(run,1000)
+               }  
+            </script>
+        </body>
+</html>
